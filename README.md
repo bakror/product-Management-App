@@ -66,13 +66,13 @@ Use the App:
 
 ## Folder Structure
 
-```
-project-folder/
+```project-folder/
 │
 ├─ index.html      # Main HTML file
 ├─ main.css       # CSS for styling and dark mode
 ├─ index.js       # JavaScript logic for CRUD, search, and dark mode
 └─ README.md       # Project documentation```
+
 ---
 
 License
