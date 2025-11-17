@@ -46,7 +46,7 @@ Allows you to **create, read, update, delete (CRUD)** products with additional f
 1. **Clone or download the project**:
 
    ```bash
-   git clone <project-url>
+   git clone https://github.com/bakror/product-Management-App.git
 
 Open index.html in a browser.
 
