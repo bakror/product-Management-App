@@ -1,0 +1,382 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8fafc;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  color: #1e293b;
+}
+
+body.dark {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #1e293b;
+  width: 60px;
+  height: 32px;
+  border-radius: 50px;
+  position: relative;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.fa-moon {
+  color: #facc15;
+  font-size: 18px;
+  transform: rotate(0deg);
+  transition: transform 0.6s ease-in-out;
+}
+
+.fa-sun {
+  color: #fb923c;
+  font-size: 18px;
+  transform: rotate(0deg);
+  transition: transform 0.6s ease-in-out;
+}
+
+.checkbox:checked + .checkbox-label .fa-moon {
+  transform: rotate(360deg);
+}
+
+.checkbox:checked + .checkbox-label .fa-sun {
+  transform: rotate(360deg);
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  border-radius: 50%;
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(28px);
+  background-color: #facc15;
+}
+
+.checkbox-label:hover {
+  background-color: #334155;
+  transform: scale(1.08);
+}
+
+.crud {
+  width: 90%;
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.head {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 2rem 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1e293b;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+body.dark .head {
+  color: #e2e8f0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+input {
+  width: 100%;
+  height: 42px;
+  outline: none;
+  border: 1px solid #cbd5e1;
+  background-color: #1e293b;
+  margin: 8px 0;
+  border-radius: 8px;
+  padding: 0 12px;
+  color: #e2e8f0;
+  font-size: 1rem;
+  transition: all 0.4s ease-in-out;
+}
+
+input:focus {
+  background-color: #0f172a;
+  border-color: #8b5cf6;
+  transform: scale(1.02);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
+  animation: pulse 0.8s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 rgba(139, 92, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(139, 92, 246, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
+  }
+}
+
+.product input {
+  width: 20%;
+  min-width: 140px;
+  margin: 10px 10px 10px 0;
+}
+
+#total {
+  background-color: #dc2626;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  animation: slideIn 0.8s ease-in-out;
+}
+
+#total::before {
+  content: "Total: ";
+  font-weight: 700;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+button {
+  width: 100%;
+  height: 44px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 12px;
+  background-color: #8b5cf6;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.4s ease-in-out;
+}
+
+button:hover {
+  background-color: #7c3aed;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(124, 58, 237, 0.5);
+  animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(-4px);
+  }
+}
+
+.btnSearch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.btnSearch button {
+  width: 48%;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  animation: fadeIn 1s ease-in-out;
+}
+
+table th {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #1e293b;
+  padding: 12px;
+  background-color: #e2e8f0;
+}
+
+body.dark table th {
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+body.dark th,
+body.dark td {
+  border-bottom: 1px solid #475569;
+}
+
+.mianColor {
+  width: fit-content;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .crud {
+    width: 94%;
+  }
+
+  .head {
+    font-size: 1.6rem;
+  }
+
+  .product input {
+    width: 48%;
+    min-width: 120px;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .checkbox-label {
+    width: 52px;
+    height: 28px;
+  }
+
+  .checkbox-label .ball {
+    width: 22px;
+    height: 22px;
+  }
+
+  .checkbox:checked + .checkbox-label .ball {
+    transform: translateX(26px);
+  }
+
+  .crud {
+    width: 96%;
+    padding: 0 0.8rem;
+  }
+
+  .head {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .product input {
+    width: 100%;
+    margin: 6px 0;
+  }
+
+  .btnSearch {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .btnSearch button {
+    width: 100%;
+    height: 42px;
+  }
+
+  table th,
+  table td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkbox-label {
+    width: 46px;
+    height: 24px;
+  }
+
+  .checkbox-label .ball {
+    width: 20px;
+    height: 20px;
+  }
+
+  .checkbox:checked + .checkbox-label .ball {
+    transform: translateX(22px);
+  }
+
+  .fa-moon,
+  .fa-sun {
+    font-size: 16px;
+  }
+
+  .crud {
+    width: 98%;
+    padding: 0 0.5rem;
+  }
+
+  .head {
+    font-size: 1.3rem;
+    margin: 1.2rem 0;
+  }
+
+  input {
+    height: 38px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    padding: 0 10px;
+  }
+
+  button {
+    height: 40px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  table th,
+  table td {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  #total {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+  }
+}

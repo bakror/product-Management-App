@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruds</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="mianColor">
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="checkbox-label">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+            <span class="ball"></span>
+
+
+
+
+            
+        </label>
+    </div>
+
+
+
+    <div class="crud">
+        <header class="head">
+            <h2>Cruds</h2>
+            <p>Product Mangagement System</p>
+        </header>
+
+        <div class="inputs">
+            <input placeholder="title" type="text" id="title">
+            <div class="product">
+                <input placeholder="price" type="number" id="price">
+                <input placeholder="taxes" type="number" id="taxes">
+                <input placeholder="ads" type="number" id="ads">
+                <input placeholder="discount" type="number" id="discount">
+                <small id="total"></small>
+            </div>
+            <input placeholder="count" type="number" id="count">
+            <input placeholder="category" type="text" id="category">
+            <button id="submit">Create</button>
+
+            </form>
+            <div class="outputs">
+                <div class="searchContainer">
+                    <input onkeyup="searchDate(this.value)" type="text" placeholder="Search" id="search">
+                    <div id="btnSearch" class="btnSearch">
+                        <button onclick="searchMood (this.id)" id="searchTitle">
+                            Search By Title
+                        </button>
+                        <button onclick="searchMood (this.id)" id="searchCategory">
+                            Search By Category
+                        </button>
+                    </div>
+                </div>
+                <div id="deleteAll">
+
+                </div>
+                <table id="finl">
+                    <tr>
+                        <th>id</th>
+                        <th>title</th>
+                        <th>price</th>
+                        <th>taxes</th>
+                        <th>ads</th>
+                        <th>discount</th>
+                        <th>category</th>
+                        <th>Total</th>
+                        <th>update</th>
+                        <th>delete</th>
+                    </tr>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script src="index.js"></script>
+</body>
+
+</html>
